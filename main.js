@@ -22,7 +22,7 @@ class Calculator {
     appendNumber(number) {
         /* Period limited to one occurence */
         if(this.finishCompute && this.operation !== null){
-            this.clear();
+            this.currentOperand = '';
             this.finishCompute = false;
         }
         if(number === '.' && this.currentOperand.includes('.')) return;
