@@ -13,13 +13,15 @@ class Calculator {
     }
 
     delete() {
+        // "Chop" off the last elem of string.
+        this.currentOperand = this.currentOperand.toString().slice(0, -1)
 
     }
     
     appendNumber(number) {
         /* Period limited to one occurence */
         if(number === '.' && this.currentOperand.includes('.')) return;
-        this.currentOperand += number;
+        this.currentOperand = this.currentOperand.toString() + number.toString();
     }
 
     chooseOperation(operation) {
@@ -94,5 +96,15 @@ operationButtons.forEach(button => {
 
 equalsButton.addEventListener('click', button => {
     calculator.compute();
+    calculator.updateDisplay();
+})
+
+allClearButton.addEventListener('click', button => {
+    calculator.clear();
+    calculator.updateDisplay();
+})
+
+deleteButton.addEventListener('click', button => {
+    calculator.delete();
     calculator.updateDisplay();
 })
