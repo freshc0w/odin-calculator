@@ -37,6 +37,7 @@ body {
 }
 
 .output {
+    border-radius: 1em;
     grid-column: 1 / -1;
     background-color: rgba(0, 0, 0, .75);
     display: flex;
