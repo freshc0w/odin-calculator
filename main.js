@@ -23,6 +23,7 @@ class Calculator {
     }
 
     chooseOperation(operation) {
+        if(this.currentOperand === '') return; /* Ignore operation if no display. */
         this.operation = operation;
         this.previousOperand = this.currentOperand;
         this.currentOperand = '';
