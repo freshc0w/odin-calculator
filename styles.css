@@ -48,4 +48,12 @@ body {
     word-break: break-all; /* If 'word' is too long, the words will wrap onto the next line. */
 }
 
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
 
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem; /* Slighly larger than prev. operand */
+}
