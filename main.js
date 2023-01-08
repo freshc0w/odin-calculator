@@ -6,6 +6,7 @@ class Calculator {
     }
 
     clear() {
+        /* Initialise the current abd prev operand */
         this.currentOperand = '';
         this.previousOperand = '';
         this.operation = undefined;
@@ -16,7 +17,7 @@ class Calculator {
     }
     
     appendNumber(number) {
-
+        this.currentOperand = number;
     }
 
     chooseOperation(operation) {
@@ -28,7 +29,7 @@ class Calculator {
     }
 
     updateDisplay() {
-
+        this.currentOperandTextElement.innerText = this.currentOperand 
     }
 }
 
@@ -42,4 +43,11 @@ const allClearButton = document.querySelector('[data-all-clear]');
 const previousOperandTextElement = document.querySelector('[data-previous-operand]');
 const currentOperandTextElement = document.querySelector('[data-current-operand]');
 
-const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
+const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
+
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.appendNumber(button.innerText); // .innerText refers to the text of the button iteself.
+        calculator.updateDisplay();
+    })
+})
