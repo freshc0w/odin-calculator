@@ -17,7 +17,9 @@ class Calculator {
     }
     
     appendNumber(number) {
-        this.currentOperand = number;
+        /* Period limited to one occurence */
+        if(number === '.' && this.currentOperand.includes('.')) return;
+        this.currentOperand += number;
     }
 
     chooseOperation(operation) {
