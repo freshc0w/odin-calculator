@@ -10,6 +10,7 @@ class Calculator {
         this.currentOperand = '';
         this.previousOperand = '';
         this.operation = undefined;
+        this.finishCompute = false
     }
 
     delete() {
@@ -20,6 +21,10 @@ class Calculator {
     
     appendNumber(number) {
         /* Period limited to one occurence */
+        if(this.finishCompute && this.operation !== null){
+            this.clear();
+            this.finishCompute = false;
+        }
         if(number === '.' && this.currentOperand.includes('.')) return;
         this.currentOperand = this.currentOperand.toString() + number.toString();
     }
@@ -59,7 +64,8 @@ class Calculator {
         };
         this.currentOperand = computation;
         this.operation = undefined;
-        this.previousOperand = '';       
+        this.previousOperand = ''; 
+        this.finishCompute = true;      
     };
 
     getDisplayNumber(number) {
