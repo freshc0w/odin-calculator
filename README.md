@@ -8,3 +8,5 @@ The following skills will be applied and aimed to be refined throughout:
 - CSS styling.
 - Javascript usage of functions, loops etc.
 
+The goals of this project is to refine these skills and also develop logic and reasoning to solve
+basic/complex problems regarding different needs and functionalities. 
