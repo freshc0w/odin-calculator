@@ -5,8 +5,13 @@
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0;
     margin: 0;
+    min-height: 100vh;
+    min-width: 100%;
     /* background: linear-gradient(to right, #00AAFF, #00FF6C); */
     background: linear-gradient(-45deg, 
         #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -29,12 +34,16 @@ body {
 
 .calculator-grid {
     display: grid;
+    height: 620px;
+    width: 400px;
+    border: 2px blue dotted;
     justify-content: center;
     align-content: center;
-    min-height: 100vh; /* fill 100% of the height ALL the time. */
+    /* min-height: 100vh; */ /* fill 100% of the height ALL the time. */
     grid-template-columns: repeat(4, 100px);
     /* Have a set min of 120px but have auto so the row can grow as large as it needs to be. */
     grid-template-rows: minmax(120px, auto) repeat(5, 100px); 
+    box-shadow: 0 0 30px #fff;
 }
 
 .calculator-grid > button {
