@@ -6,7 +6,7 @@ class Calculator {
     }
 
     clear() {
-        /* Initialise the current abd prev operand */
+        /* Initialise the current and prev operand */
         this.currentOperand = '';
         this.previousOperand = '';
         this.operation = undefined;
